@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+
+<head>
+  <title>WebSocket Test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<!-- <p>Open link in a new window or tab: <a href="Login.html" target="_blank">Login</a></p> -->
+
+
+
+<body>
+          <!-- username, firstname,lastname, email, pw -->
+  
+          <!-- <form action="/action_page.php" style="border:1px solid #ccc"> -->
+            <div class="body-container container" style="display: flex; flex-direction: row; width:100%; justify-content: center; margin: 10px">
+
+              <div class="timeline container" style="width: 900px;">
+                <ul class="nav nav-tabs">
+                  <li class="active"><button type="button" class="btn btn-link" data-toggle="tab" href="#home">Home</button></li>
+                  <li><button type="button" class="btn btn-link" data-toggle="tab" href="#followers">Followers</button></li>
+                  <li><button type="button" class="btn btn-link" data-toggle="tab" href="#followees">Following</button></li>
+                  <li><button type="button" class="btn btn-link" data-toggle="tab" href="#search">Search</button></li>
+                  <li><button type="button" class="btn btn-link" data-toggle="tab" href="#follow">Follow</button></li>
+                  <!-- <li><button type="button" class="btn btn-link" data-toggle="tab" href="#fol">Following</button></li> -->
+                </ul>
+
+                <div class="tab-content">
+                  <div id="home" class="tab-pane fade in active">
+                      <h3>HOME</h3>
+                      <div class="form-group">
+                          <label for="tweet">Enter your tweet here:</label>
+                          <textarea class="form-control" rows="5" id="tweettext"></textarea>
+                          <br>
+                          <button onClick ="newtweet()" type="button" class=" p-2 btn btn-primary " id="submittweet">Tweet</button>
+                      </div>
+                      <div id="homeres">
+      
+                      </div>
+                  </div>
+      
+      
+                  <div id="followers" class="tab-pane fade">
+                      <h3>Followers List</h3>
+                      <div class="form-group">
+                          <!-- <label for="searchtext">Followers here:</label>
+                          <input type="text" class="form-control" id="searchtext"></input>
+                          <br>
+                          <button type="button" class=" p-2 btn btn-primary " id="submitsearch">Search</button> -->
+                      </div>
+                      <!-- <h3>Followers List</h3>
+                      <input class="form-control lg" type="text" placeholder="My Followers." readonly>           -->
+                      <div id="followers1">
+      
+                      </div>
+                  </div>
+                  <div id="followees" class="tab-pane fade mb-2">
+                      <h3>Following List</h3>
+                      
+                      <div id="followees1">
+      
+                      </div>
+                  </div>
+      
+                  <div id="search" class="tab-pane fade">
+                    <h3>Search</h3>
+                    <div class="form-group">
+                        <label for="searchtext">Search:</label>
+                        <input type="text" class="form-control" id="searchtext"></input>
+                        <br>
+                        <button onclick = "search()" type="button" class=" p-2 btn btn-primary " id="submitsearch">Search</button>
+                    </div>
+                          
+                    <div id="search1">
+      
+                    </div>
+                </div>
+                <div id="follow" class="tab-pane fade mb-2">
+                  <h3>Add new person to follow</h3>
+                  <div class="form-group">
+                    <label for="followtext">Search:</label>
+                    <input type="text" class="form-control" id="followtext"></input>
+                  <br>
+                  <button onclick = "follow()" type="button" class=" p-2 btn btn-primary " id="submitfollow">Follow</button>
+                  </div>
+                  <div id="follow1">
+      
+                  </div>
+              </div>
+      
+              
+                </div>
+              </div>
+              
+
+              <div class="credential-form" style="display: flex; flex-direction: column; width: 300px; margin-right: 150px">
+                <div class = "login-form container" style="display: flex; flex-direction: column; width: 300px">
+                
+                  <label for="uname"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" name="uname" id = "uname" required>
+              
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="pswl" id = "pswl" required>
+              
+                  <button type="button" onclick="login()" >Login</button>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                  </label>
+            
+              </div>
+
+              <div class="signup-form" style="display: flex; flex-direction: column; width: 300px;">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+                <label for="usrname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="usrname" id = "usrname" required>
+
+                <label for="fname"><b>First Name</b></label>
+                <input type="text" placeholder="Enter First Name" name="fname" id = "fname" required>
+
+                <label for="lname"><b>Last Name</b></label>
+                <input type="text" placeholder="Enter Last Name" name="lname" id = "lname" required>
+            
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" id = "email" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id = "psw" required>
+
+                <button type="button" onclick="signup()" >Sign Up</button>
+              </div>
+              </div>
+              
+              
+          
+              <!-- <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" id = "psw-repeat" required>
+              
+              <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+              </label>
+               -->
+              <!-- <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> -->
+          
+              <!-- <div class="clearfix">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+              </div> -->
+            </div>
+          
+
+  
+      <!-- <li><a href="#">
+        Login
+        <button id="login">Login</button> 
+        <form action="action_page.php" method="post"> 
+          <div class="imgcontainer">
+          <img src="img_avatar2.png" alt="Avatar" class="avatar">
+          </div>
+         -->
+          
+        
+          <!-- <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div> -->
+
+     
+
+<script language="javascript" type="text/javascript">
+
+  var wsUri = "ws://localhost:8080/websocket";
+  var output;
+  var myUser;
+
+  function init()
+  {
+    homeres = document.getElementById("homeres");
+    followers1 = document.getElementById("followers1");
+    followees1 = document.getElementById("followees1");
+    search1 = document.getElementById("search1");
+    follow1 = document.getElementById("follow1");
+
+    testWebSocket();
+  }
+
+  function testWebSocket()
+  {
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+  }
+
+  function onOpen(evt)
+  {
+  }
+
+  
+  function login() {
+    //Event.preventDefault();
+    var username = document.getElementById("uname").value;
+    myUser = username;
+    var pw = document.getElementById("pswl").value;
+    var loginMsg = "type:LOGIN%uname:"+username+"%pw:"+pw;
+    alert(loginMsg);
+    websocket.send(loginMsg);
+    //Event.preventDefault();
+  }
+
+  function signup() {
+    //Event.preventDefault();
+    var usrname = document.getElementById("usrname").value;
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var psw = document.getElementById("psw").value;
+    var email = document.getElementById("email").value;
+    var signupMsg = "type:SIGNUP%usrname:"+usrname+"%fname:"+fname+"%lname:"+lname+"%email:"+email+"%psw:"+psw;
+    alert("Registration successful");
+    websocket.send(signupMsg);
+    //Event.preventDefault();
+  }
+
+  function search() {
+    //Event.preventDefault();
+    var toSearch = document.getElementById("searchtext").value;
+    var searchMsg = "type:SEARCH%myUser:"+myUser+"%toSearch:"+toSearch;
+    alert(searchMsg);
+    //search1.innerHTML = "";
+    document.getElementById("search1").innerHTML = "";
+    websocket.send(searchMsg);
+    //Event.preventDefault();
+  }
+
+  function newtweet() {
+    //Event.preventDefault();
+    var tweettext = document.getElementById("tweettext").value;
+    var tweetMsg = "type:NEWTWEET%myUser:"+myUser+"%toSearch:"+tweettext;
+    alert(tweetMsg);
+    websocket.send(tweetMsg);
+    //Event.preventDefault();
+  }
+  
+  function follow() {
+    //Event.preventDefault();
+    var follow = document.getElementById("followtext").value;
+    var followMsg = "type:FOLLOW%myUser:"+myUser+"%follow:"+follow;
+    alert(followMsg);
+    websocket.send(followMsg);
+    //Event.preventDefault();
+  }
+
+  function onClose(evt)
+  {
+  }
+
+  function onMessage(evt)
+  {
+    //writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+    // ("type:$home$%firstName:"+firstName+"%lastName:"+lastName+"%originalFName:"+originalFName+"%originalLName:"+originalLName+ "%tweet:"+tweet+"")
+
+    if (evt.data.includes("$home$")){
+      // split
+      var types = evt.data.split("%");
+      var firstName = (types[1].split(":"))[1]
+      var lastName = (types[2].split(":"))[1]
+      var originalFirstName = (types[3].split(":"))[1]
+      var originalLastName = (types[4].split(":"))[1]
+      var tweet = (types[5].split(":"))[1]
+      console.log(evt.data)
+      var pre = document.createElement("p");
+      pre.style.wordWrap = "break-word";
+      if (firstName === ""){
+      pre.innerHTML = originalFirstName+ " " + originalLastName + " <br>" + tweet;
+
+      }
+      else{
+      pre.innerHTML = firstName+ " " + lastName + "(RETWEET) <br> Original Post by " + originalFirstName + " " + originalLastName + " <br>" + tweet;
+      }
+      //output.appendChild(pre);
+      homeres.prepend(pre);
+    }
+
+    if (evt.data.includes("$follower$")){
+      // split
+      var types = evt.data.split("%");
+      var followerName = (types[1].split(":"))[1]
+      // var lastName = types[2].split(":")
+      // var originalFirstName = types[3].split(":")
+      // var originalLastName = types[4].split(":")
+      // var tweet = types[5].split(":")
+      console.log(evt.data)
+      var pre = document.createElement("p");
+      pre.style.wordWrap = "break-word";
+      pre.innerHTML = "User " + followerName;
+      //output.appendChild(pre);
+      followers1.prepend(pre);
+    }
+
+    if (evt.data.includes("$followee$")){
+      // split
+      var types = evt.data.split("%");
+      var followeeName = (types[1].split(":"))[1]
+      // var lastName = types[2].split(":")
+      // var originalFirstName = types[3].split(":")
+      // var originalLastName = types[4].split(":")
+      // var tweet = types[5].split(":")
+      console.log(evt.data)
+      var pre = document.createElement("p");
+      pre.style.wordWrap = "break-word";
+      pre.innerHTML = "User " + followeeName;
+      //output.appendChild(pre);
+      followees1.prepend(pre);
+    }
+
+    if (evt.data.includes("$search$")){
+      //let mutable str = ("type:$search$%fullName:"+fullname+"%tweet:"+tweet)
+      // split 
+      var types = evt.data.split("%");
+      var fullName = (types[1].split(":"))[1]
+      var tweet = (types[2].split(":"))[1]
+
+      // var resharedUser = (types[1].split(":"))[1]
+      // var originalUser = (types[2].split(":"))[1]
+      // var tweet = (types[3].split(":"))[1]
+      // var lastName = types[2].split(":")
+      // var originalFirstName = types[3].split(":")
+      // var originalLastName = types[4].split(":")
+      // var tweet = types[5].split(":")
+
+      console.log(evt.data)
+      let pre = document.createElement("p");
+      pre.style.wordWrap = "break-word";
+      pre.innerHTML = fullName + '<br>' + tweet;
+      //output.appendChild(pre);
+      //search1.innerHTML = "";
+      search1.prepend(pre);
+    }
+
+    if (evt.data.includes("$se1$")){
+      // split
+      var types = evt.data.split("%");
+      var resharedUser = (types[1].split(":"))[1]
+      var originalUser = (types[2].split(":"))[1]
+      var tweet = (types[3].split(":"))[1]
+      // var lastName = types[2].split(":")
+      // var originalFirstName = types[3].split(":")
+      // var originalLastName = types[4].split(":")
+      // var tweet = types[5].split(":")
+      console.log(evt.data)
+      let pre = document.createElement("p");
+      pre.style.wordWrap = "break-word";
+      pre.innerHTML = resharedUser + '<br>' + originalUser + '<br>' + tweet;
+      //output.appendChild(pre);
+      //search1.innerHTML = "";
+      search1.prepend(pre);
+    }
+
+    if (evt.data.includes("$follow$")){
+      // split "type:$follow$%followeeUserName:"+eachFollowee+""
+      var types = evt.data.split("%");
+      var followeeName = (types[1].split(":"))[1]
+      // var lastName = types[2].split(":")
+      // var originalFirstName = types[3].split(":")
+      // var originalLastName = types[4].split(":")
+      // var tweet = types[5].split(":")
+      console.log(evt.data)
+      var pre = document.createElement("p");
+      pre.style.wordWrap = "break-word";
+      pre.innerHTML = "User " + followeeName;
+      //output.appendChild(pre);
+      //follow1.prepend(pre);
+      followees1.prepend(pre);
+    }
+    
+
+
+    //websocket.close();
+  }
+
+  function onError(evt)
+  {
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+  }
+
+  function doSend(message)
+  {
+  }
+
+  function writeToScreen(message)
+  {
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
+  }
+
+  window.addEventListener("load", init, false);
+
+</script>
+</body>

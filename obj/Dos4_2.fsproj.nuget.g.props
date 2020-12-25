@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/aditipage/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/aditipage/.nuget/packages/</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.7.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash($(NuGetPackageFolders)))" />
+  </ItemGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/home/aditipage/.nuget/packages/fsharp.core/4.7.2</PkgFSharp_Core>
+    <PkgSuave Condition=" '$(PkgSuave)' == '' ">/home/aditipage/.nuget/packages/suave/2.5.6</PkgSuave>
+    <PkgMathNet_Numerics Condition=" '$(PkgMathNet_Numerics)' == '' ">/home/aditipage/.nuget/packages/mathnet.numerics/4.12.0</PkgMathNet_Numerics>
+    <PkgAkka Condition=" '$(PkgAkka)' == '' ">/home/aditipage/.nuget/packages/akka/1.4.12</PkgAkka>
+    <PkgAkka_FSharp Condition=" '$(PkgAkka_FSharp)' == '' ">/home/aditipage/.nuget/packages/akka.fsharp/1.4.12</PkgAkka_FSharp>
+    <PkgAkka_Configuration Condition=" '$(PkgAkka_Configuration)' == '' ">/home/aditipage/.nuget/packages/akka.configuration/1.0.5835.36887</PkgAkka_Configuration>
+  </PropertyGroup>
+</Project>

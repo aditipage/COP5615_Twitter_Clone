@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "restore": {
+    "/mnt/sda2/TwitterClone/Dos4_2.fsproj": {}
+  },
+  "projects": {
+    "/mnt/sda2/TwitterClone/Dos4_2.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/sda2/TwitterClone/Dos4_2.fsproj",
+        "projectName": "Dos4_2",
+        "projectPath": "/mnt/sda2/TwitterClone/Dos4_2.fsproj",
+        "packagesPath": "/home/aditipage/.nuget/packages/",
+        "outputPath": "/mnt/sda2/TwitterClone/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/aditipage/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Akka": {
+              "target": "Package",
+              "version": "[1.4.12, )",
+              "generatePathProperty": true
+            },
+            "Akka.Configuration": {
+              "target": "Package",
+              "version": "[1.0.5835.36887, )",
+              "generatePathProperty": true
+            },
+            "Akka.FSharp": {
+              "target": "Package",
+              "version": "[1.4.12, )",
+              "generatePathProperty": true
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.7.2, )",
+              "generatePathProperty": true
+            },
+            "MathNet.Numerics": {
+              "target": "Package",
+              "version": "[4.12.0, )",
+              "generatePathProperty": true
+            },
+            "Suave": {
+              "target": "Package",
+              "version": "[2.5.6, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

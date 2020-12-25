@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "dgSpecHash": "V4JmRucPP5az5AcImJR/Bne2RkfPCZ2U7bi+XS42mdcBudLa4aYNA8uWN2j/Z/IsUUho+PCRrqvR6iXWiVdyjw==",
+  "success": true,
+  "projectFilePath": "/mnt/sda2/TwitterClone/Dos4_2.fsproj",
+  "expectedPackageFiles": [
+    "/home/aditipage/.nuget/packages/akka/1.4.12/akka.1.4.12.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/akka.configuration/1.0.5835.36887/akka.configuration.1.0.5835.36887.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/akka.fsharp/1.4.12/akka.fsharp.1.4.12.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/fsharp.core/4.7.2/fsharp.core.4.7.2.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/fsharp.quotations.evaluator/1.1.3/fsharp.quotations.evaluator.1.1.3.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/fspickler/5.3.2/fspickler.5.3.2.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/mathnet.numerics/4.12.0/mathnet.numerics.4.12.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/suave/2.5.6/suave.2.5.6.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.collections.immutable/1.7.1/system.collections.immutable.1.7.1.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.configuration.configurationmanager/4.7.0/system.configuration.configurationmanager.4.7.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.io/4.3.0/system.io.4.3.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.reflection.emit.ilgeneration/4.3.0/system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.reflection.emit.lightweight/4.3.0/system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.reflection.primitives/4.3.0/system.reflection.primitives.4.3.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.security.accesscontrol/4.7.0/system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.security.cryptography.protecteddata/4.7.0/system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.security.permissions/4.7.0/system.security.permissions.4.7.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
+    "/home/aditipage/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Akka.Configuration 1.0.5835.36887' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Akka.Configuration",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
